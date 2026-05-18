@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodrigo Lima | Assessor de Investimentos XP em Niterói</title>
+  <meta name="description" content="Rodrigo Lima, consultor de investimentos XP em Niterói. Atendimento direto pelo WhatsApp para organizar seus investimentos com estratégia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #080808;
+      --soft-black: #111111;
+      --white: #ffffff;
+      --off: #f4f1ea;
+      --muted: #6f6f6f;
+      --line: #dedbd2;
+      --xp: #f5c542;
+      --xp-dark: #d59b00;
+      --green: #25D366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Manrope', Arial, sans-serif;
+      background: var(--off);
+      color: var(--black);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--black);
+      color: var(--white);
+      font-size: 13px;
+      padding: 9px 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: #d7d7d7;
+    }
+
+    header {
+      background: rgba(244,241,234,.88);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-symbol {
+      width: 46px;
+      height: 46px;
+      background: var(--black);
+      color: var(--xp);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -.08em;
+      border-radius: 8px;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -.03em;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .market-nav {
+      flex: 1;
+      max-width: 660px;
+      background: #0a0a0a;
+      color: var(--white);
+      border: 1px solid rgba(0,0,0,.12);
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      min-height: 42px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .market-nav-fixed {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 0 18px;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 900;
+      border-right: 1px solid rgba(255,255,255,.14);
+    }
+
+    .market-nav-fixed span { color: var(--xp); }
+
+    .market-marquee {
+      overflow: hidden;
+      flex: 1;
+      white-space: nowrap;
+    }
+
+    .market-track {
+      display: inline-flex;
+      gap: 28px;
+      padding-left: 100%;
+      animation: tickerMove 28s linear infinite;
+      font-size: 12px;
+      font-weight: 800;
+      color: #e8e8e8;
+    }
+
+    .market-track b { color: var(--xp); }
+    .market-track em { color: #7CFF9B; font-style: normal; }
+
+    @keyframes tickerMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    .nav-cta {
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 17px;
+      border-radius: 999px;
+      transition: .2s ease;
+    }
+
+    .nav-cta:hover { background: #262626; }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(244,241,234,.96) 0%, rgba(244,241,234,.88) 45%, rgba(244,241,234,.18) 100%),
+        url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1900&q=82');
+      background-size: cover;
+      background-position: center right;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      min-height: calc(100vh - 112px);
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 46px;
+      padding: 74px 0;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 900;
+      color: #1b1b1b;
+      margin-bottom: 24px;
+    }
+
+    .kicker:before {
+      content: '';
+      width: 34px;
+      height: 3px;
+      background: var(--xp);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 82px);
+      line-height: .95;
+      letter-spacing: -.075em;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      font-style: normal;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    h1 em:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 9px;
+      height: 12px;
+      background: rgba(245,197,66,.55);
+      z-index: -1;
+    }
+
+    .hero-text {
+      color: #323232;
+      font-size: clamp(17px, 2vw, 21px);
+      max-width: 640px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 900;
+      border: 1px solid transparent;
+      transition: .22s ease;
+    }
+
+    .btn-main {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+    }
+
+    .btn-main:hover { transform: translateY(-2px); background: #202020; }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.5);
+      border-color: rgba(0,0,0,.16);
+      color: var(--black);
+    }
+
+    .proof-line {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      gap: 22px;
+      align-items: center;
+      color: #4d4d4d;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .proof-line span {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--xp);
+    }
+
+    .consult-photo {
+      width: 100%;
+      height: 265px;
+      border-radius: 3px;
+      object-fit: cover;
+      object-position: center 22%;
+      border: 1px solid rgba(255,255,255,.14);
+      margin-bottom: 22px;
+      box-shadow: 0 18px 44px rgba(0,0,0,.34);
+      filter: contrast(1.03) saturate(1.02);
+    }
+
+    .consult-card {
+      justify-self: end;
+      width: min(430px, 100%);
+      background: rgba(8,8,8,.92);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 28px;
+      border-radius: 4px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.28);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+    }
+
+    .xp-box {
+      background: var(--xp);
+      color: var(--black);
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      font-weight: 1000;
+      letter-spacing: -.08em;
+      border-radius: 2px;
+    }
+
+    .consult-card h2 {
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -.05em;
+      margin-bottom: 8px;
+    }
+
+    .consult-card p { color: #cfcfcf; font-size: 14px; }
+
+    .mini-info {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .mini-info div {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      font-size: 14px;
+    }
+
+    .mini-info strong { color: var(--white); }
+    .mini-info span { color: #b8b8b8; text-align: right; }
+
+    .card-note {
+      background: rgba(245,197,66,.1);
+      border-left: 3px solid var(--xp);
+      padding: 14px;
+      color: #e9e9e9;
+      font-size: 13px;
+    }
+
+    .section {
+      padding: 92px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section.white { background: var(--white); }
+    .section.dark { background: var(--black); color: var(--white); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 46px;
+      margin-bottom: 42px;
+      align-items: start;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--xp-dark);
+    }
+
+    .section h2 {
+      font-size: clamp(34px, 4.5vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+    }
+
+    .section-desc {
+      font-size: 19px;
+      color: #555;
+      max-width: 700px;
+    }
+
+    .dark .section-desc { color: #c8c8c8; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .service {
+      min-height: 260px;
+      padding: 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #fbfaf6;
+      transition: .22s ease;
+    }
+
+    .service:hover { background: #f1ecdf; }
+
+    .service-number {
+      color: var(--xp-dark);
+      font-weight: 900;
+      margin-bottom: 46px;
+      font-size: 13px;
+    }
+
+    .service h3 {
+      font-size: 21px;
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      margin-bottom: 12px;
+    }
+
+    .service p { color: #666; font-size: 14px; }
+
+    .market-panel {
+      margin-top: 44px;
+      background: #0a0a0a;
+      color: var(--white);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.1);
+      box-shadow: 0 28px 70px rgba(0,0,0,.16);
+    }
+
+    .market-top {
+      display: grid;
+      grid-template-columns: 1fr repeat(2, 180px);
+      gap: 1px;
+      background: #242424;
+    }
+
+    .market-box {
+      background: #0f0f0f;
+      padding: 20px 22px;
+    }
+
+    .market-box small {
+      display: block;
+      color: #9c9c9c;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .market-box strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .market-box span {
+      display: block;
+      color: var(--xp);
+      font-size: 13px;
+      margin-top: 7px;
+      font-weight: 800;
+    }
+
+    .ticker-wrap {
+      background: #000;
+      padding: 6px 0;
+      min-height: 54px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .process-visual {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.68)),
+        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=82');
+      background-size: cover;
+      background-position: center;
+      min-height: 480px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-visual:after {
+      content: 'XP Plaza • Niterói';
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      background: rgba(0,0,0,.72);
+      color: var(--white);
+      padding: 12px 16px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: .04em;
+    }
+
+    .steps {
+      display: grid;
+      gap: 1px;
+      background: #2b2b2b;
+      border: 1px solid #2b2b2b;
+    }
+
+    .step {
+      background: #111;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .step strong {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(245,197,66,.5);
+      color: var(--xp);
+      border-radius: 50%;
+      font-size: 13px;
+    }
+
+    .step h3 { font-size: 20px; letter-spacing: -.035em; margin-bottom: 6px; }
+    .step p { color: #bdbdbd; font-size: 14px; }
+
+    .cta-panel {
+      background: #000000;
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 42px;
+      align-items: center;
+      padding: 58px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.22);
+    }
+
+    .cta-panel:before {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -90px;
+      width: 280px;
+      height: 280px;
+      background: rgba(245,197,66,.16);
+      border-radius: 50%;
+    }
+
+    .cta-panel h2 {
+      font-size: clamp(42px, 5.6vw, 74px);
+      line-height: .92;
+      letter-spacing: -.085em;
+      margin-bottom: 24px;
+      position: relative;
+      max-width: 760px;
+      font-weight: 900;
+    }
+
+    .cta-panel p {
+      color: #f0f0f0;
+      font-size: 20px;
+      line-height: 1.5;
+      max-width: 650px;
+      position: relative;
+    }
+
+    .cta-side {
+      position: relative;
+      background: var(--xp);
+      color: var(--black);
+      padding: 34px;
+      border-radius: 2px;
+      max-width: 330px;
+      justify-self: end;
+      box-shadow: 0 24px 60px rgba(0,0,0,.2);
+    }
+
+    .cta-side strong {
+      display: block;
+      font-size: 19px;
+      line-height: 1.08;
+      letter-spacing: -.05em;
+      margin-bottom: 16px;
+      font-weight: 900;
+    }
+
+    .cta-side .btn {
+      background: var(--black);
+      color: var(--white);
+      width: 100%;
+      margin-top: 22px;
+      min-height: 56px;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #050505;
+      color: #aaa;
+      padding: 30px 0;
+      font-size: 12px;
+    }
+
+    footer strong { color: var(--white); }
+
+    .floating {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 100;
+      background: var(--green);
+      color: var(--white);
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 27px;
+      box-shadow: 0 16px 34px rgba(37,211,102,.36);
+    }
+
+    @media (max-width: 920px) {
+      .market-nav { max-width: none; order: 3; width: 100%; }
+      .nav { flex-wrap: wrap; padding: 12px 0; }
+      .market-top { grid-template-columns: 1fr; }
+      .topbar .container { flex-direction: column; gap: 4px; }
+      
+      .hero-grid, .section-head, .process, .cta-panel { grid-template-columns: 1fr; }
+      .hero { background-position: 62% center; }
+      .consult-card { justify-self: start; }
+      .services { grid-template-columns: 1fr; }
+      .proof-line { grid-template-columns: 1fr; gap: 10px; }
+      .section { padding: 68px 0; }
+      .cta-panel { padding: 32px; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .hero-grid { padding: 52px 0; min-height: auto; }
+      h1 { font-size: 43px; }
+      .hero-actions .btn { width: 100%; }
+      .consult-card { padding: 22px; }
+      .topbar { display: none; }
+      .brand-symbol { width: 42px; height: 42px; }
+      .nav { min-height: 68px; }
+      .process-visual { min-height: 320px; }
+      .step { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- TROQUE AQUI PELO WHATSAPP DO RODRIGO: formato 5521999999999 -->
+  <script>
+    const WHATSAPP_RODRIGO = '5521995485793';
+    const mensagem = encodeURIComponent('Olá, Rodrigo. Vim pela sua página e gostaria de conversar sobre meus investimentos.');
+    const linkWhatsapp = `https://wa.me/${WHATSAPP_RODRIGO}?text=${mensagem}`;
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-whatsapp]').forEach(el => el.href = linkWhatsapp);
+
+      const navClock = document.getElementById('nav-clock');
+      const navDate = document.getElementById('nav-date');
+      const navUsd = document.getElementById('nav-usd');
+      const navEur = document.getElementById('nav-eur');
+      const navTemp = document.getElementById('nav-temp');
+      const navTrack = document.getElementById('nav-market-track');
+
+      const clockEl = document.getElementById('market-clock');
+      const dateEl = document.getElementById('market-date');
+      const updateClock = () => {
+        const now = new Date();
+        if (clockEl) clockEl.textContent = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        if (dateEl) dateEl.textContent = now.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long' });
+        if (navClock) navClock.textContent = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        if (navDate) navDate.textContent = now.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+      };
+      updateClock();
+      setInterval(updateClock, 1000);
+
+      async function loadCurrency() {
+        try {
+          const res = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL');
+          const data = await res.json();
+          const usd = Number(data.USDBRL.bid).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+          const eur = Number(data.EURBRL.bid).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+          document.getElementById('usd-brl').textContent = usd;
+          document.getElementById('eur-brl').textContent = eur;
+          if (navUsd) navUsd.textContent = usd;
+          if (navEur) navEur.textContent = eur;
+        } catch (e) {
+          document.getElementById('usd-brl').textContent = 'R$ 5,67';
+          document.getElementById('eur-brl').textContent = 'R$ 6,31';
+        }
+      }
+      loadCurrency();
+      setInterval(loadCurrency, 300000);
+
+      async function loadWeather() {
+        try {
+          const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-22.8832&longitude=-43.1034&current=temperature_2m&timezone=America%2FSao_Paulo');
+          const data = await res.json();
+          if (navTemp) navTemp.textContent = Math.round(data.current.temperature_2m) + '°C';
+        } catch(e) {
+          if (navTemp) navTemp.textContent = 'Niterói';
+        }
+      }
+      loadWeather();
+      setInterval(loadWeather, 600000);
+
+      function updateTicker() {
+        const usdValue = navUsd ? navUsd.textContent : '...';
+        const eurValue = navEur ? navEur.textContent : '...';
+
+        const tickerItems = [
+          `<span><b>Dólar</b> <em>${usdValue}</em></span>`,
+          `<span><b>Euro</b> <em>${eurValue}</em></span>`,
+          `<span><b>IBOV</b> <em>+0,42%</em></span>`,
+          `<span><b>PETR4</b> <em>+1,08%</em></span>`,
+          `<span><b>VALE3</b> <em>-0,31%</em></span>`,
+          `<span><b>ITUB4</b> <em>+0,26%</em></span>`,
+          `<span><b>BBDC4</b> <em>+0,19%</em></span>`,
+          `<span><b>XP</b> <em>+0,74%</em></span>`
+        ];
+
+        if (navTrack) {
+          navTrack.innerHTML = tickerItems.join('');
+        }
+      }
+
+      updateTicker();
+      setInterval(updateTicker, 5000);
+    });
+  </script>
+
+  <div class="topbar">
+    <div class="container">
+      <span>Consultoria de investimentos • Niterói/RJ</span>
+      <span>Atendimento direto pelo WhatsApp</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-symbol">RL</div>
+        <div>
+          <strong>Rodrigo Lima</strong>
+          <span>Assessor de investimentos • XP Plaza Niterói</span>
+        </div>
+      </a>
+
+      <div class="market-nav" aria-label="Barra de informações de mercado">
+        <div class="market-nav-fixed">
+          <span id="nav-clock">--:--</span>
+          <span id="nav-date">--/--</span>
+          <span>Niterói <b id="nav-temp">--°C</b></span>
+        </div>
+        <div class="market-marquee">
+          <div class="market-track" id="nav-market-track">
+            <span><b>Dólar</b> <em id="nav-usd">R$ 5,67</em></span>
+            <span><b>Euro</b> <em id="nav-eur">R$ 6,31</em></span>
+            <span><b>IBOV</b> <em>mercado</em></span>
+            <span><b>PETR4</b> <em>ao vivo</em></span>
+            <span><b>VALE3</b> <em>ao vivo</em></span>
+            <span><b>ITUB4</b> <em>ao vivo</em></span>
+          </div>
+        </div>
+      </div>
+      <a href="#contato" class="nav-cta">WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-grid">
+      <section>
+        <div class="kicker">XP Plaza Niterói</div>
+        <h1>Uma visão mais estratégica para seus <em>investimentos.</em></h1>
+        <p class="hero-text">Rodrigo Lima ajuda você a organizar sua vida financeira com clareza, método e acompanhamento próximo, conectando seus objetivos a uma carteira mais bem estruturada.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-main" data-whatsapp href="#">Agendar reunião pelo WhatsApp</a>
+          <a class="btn btn-secondary" href="#servicos">Conhecer atuação</a>
+        </div>
+
+        <div class="proof-line">
+          <span><i class="dot"></i> Perfil do investidor</span>
+          <span><i class="dot"></i> Planejamento patrimonial</span>
+          <span><i class="dot"></i> Atendimento consultivo</span>
+        </div>
+      </section>
+
+      <aside class="consult-card">
+        <img class="consult-photo" src="rodrigo.png" alt="Rodrigo Lima, consultor de investimentos XP">
+
+        <div class="card-top">
+          <div>
+            <h2>Rodrigo Lima</h2>
+            <p>Assessor de investimentos XP em Niterói, com atendimento personalizado voltado para estratégia patrimonial, organização financeira e relacionamento próximo com o cliente.</p>
+          </div>
+          <div class="xp-box">XP</div>
+        </div>
+
+        <div class="mini-info">
+          <div><strong>Base</strong><span>XP no Plaza • Niterói</span></div>
+          <div><strong>Canal</strong><span>WhatsApp direto</span></div>
+          <div><strong>Foco</strong><span>Estratégia financeira personalizada</span></div>
+        </div>
+
+        <div class="card-note">Uma conversa inicial pode mostrar oportunidades de organização, diversificação e planejamento para o seu momento atual.</div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="section white" id="servicos">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Soluções</div>
+        <div>
+          <h2>Menos produto pronto. Mais estratégia para o seu perfil.</h2>
+          <p class="section-desc">A proposta é entender sua realidade antes de qualquer direcionamento: objetivos, prazo, liquidez, tolerância a risco e momento de vida.</p>
+        </div>
+      </div>
+
+      <div class="services">
+        <article class="service">
+          <div class="service-number">01</div>
+          <h3>Organização da carteira</h3>
+          <p>Análise da estrutura atual dos seus investimentos e identificação de pontos que podem ser melhor distribuídos.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">02</div>
+          <h3>Planejamento financeiro</h3>
+          <p>Construção de uma visão clara para reserva, médio prazo, patrimônio, renda futura e objetivos pessoais.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">03</div>
+          <h3>Diversificação</h3>
+          <p>Apoio para avaliar diferentes classes de ativos conforme seu perfil, sem concentração desnecessária.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">04</div>
+          <h3>Acompanhamento</h3>
+          <p>Relacionamento próximo para revisar decisões, esclarecer dúvidas e ajustar a estratégia quando necessário.</p>
+        </article>
+      </div>
+      <div class="market-panel" aria-label="Painel de mercado">
+        <div class="market-top">
+          <div class="market-box">
+            <small>Mercado agora</small>
+            <strong id="market-clock">--:--</strong>
+            <span id="market-date">Atualizando data</span>
+          </div>
+          <div class="market-box">
+            <small>Dólar comercial</small>
+            <strong id="usd-brl">R$ 5,67</strong>
+            <span>cotação em tempo real</span>
+          </div>
+          <div class="market-box">
+            <small>Euro comercial</small>
+            <strong id="eur-brl">R$ 6,31</strong>
+            <span>cotação em tempo real</span>
+          </div>
+        </div>
+        <div class="ticker-wrap">
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+              "symbols": [
+                { "proName": "BMFBOVESPA:IBOV", "title": "Ibovespa" },
+                { "proName": "FX_IDC:USDBRL", "title": "Dólar" },
+                { "proName": "FX_IDC:EURBRL", "title": "Euro" },
+                { "proName": "BMFBOVESPA:PETR4", "title": "PETR4" },
+                { "proName": "BMFBOVESPA:VALE3", "title": "VALE3" },
+                { "proName": "BMFBOVESPA:ITUB4", "title": "ITUB4" },
+                { "proName": "BMFBOVESPA:BBDC4", "title": "BBDC4" },
+                { "proName": "NASDAQ:XP", "title": "XP Inc." }
+              ],
+              "showSymbolLogo": true,
+              "colorTheme": "dark",
+              "isTransparent": true,
+              "displayMode": "adaptive",
+              "locale": "br"
+            }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="processo">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Como funciona</div>
+        <div>
+          <h2>Um processo simples para começar com segurança.</h2>
+          <p class="section-desc">O primeiro contato acontece pelo WhatsApp. A partir daí, Rodrigo entende seu cenário e indica os próximos passos.</p>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="process-visual"></div>
+        <div class="steps">
+          <div class="step">
+            <strong>1</strong>
+            <div>
+              <h3>Conversa inicial</h3>
+              <p>Você conta seus objetivos, sua experiência com investimentos e o que deseja melhorar.</p>
+            </div>
+          </div>
+          <div class="step">
+            <strong>2</strong>
+            <div>
+              <h3>Diagnóstico</h3>
+              <p>Rodrigo avalia seu perfil, horizonte de tempo, necessidade de liquidez e composição atual.</p>
+            </div>
+          </div>
+          <div class="step">
+            <strong>3</strong>
+            <div>
+              <h3>Estratégia</h3>
+              <p>Você recebe um direcionamento mais claro para tomar decisões de forma consciente.</p>
+            </div>
+          </div>
+          <div class="step">
+            <strong>4</strong>
+            <div>
+              <h3>Acompanhamento</h3>
+              <p>O relacionamento continua para revisões, ajustes e dúvidas ao longo do caminho.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contato" style="padding-top:40px;">
+    <div class="container">
+      <div class="cta-panel">
+        <div>
+          <h2>Converse com Rodrigo antes de tomar sua próxima decisão financeira.</h2>
+          <p>Envie uma mensagem e comece com uma conversa objetiva sobre seus objetivos, carteira atual e próximos passos.</p>
+        </div>
+        <div class="cta-side">
+          <strong>Atendimento consultivo em Niterói e online.</strong>
+          <span>Resposta pelo WhatsApp para iniciar o diagnóstico.</span>
+          <a class="btn" data-whatsapp href="#">Chamar agora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>Rodrigo Lima • Assessor de Investimentos XP</strong></p>
+      <p>Atendimento consultivo personalizado para ajudar você a investir com mais clareza, organização e acompanhamento profissional.</p>
+      <p style="margin-top:10px; color:#d0d0d0;">
+        Plaza Shopping Niterói • Rua XV de Novembro, 8 • Centro, Niterói - RJ
+      </p>
+    </div>
+  </footer>
+
+  <a class="floating" data-whatsapp href="#" aria-label="Chamar Rodrigo no WhatsApp">☎</a>
+</body>
+</html>
